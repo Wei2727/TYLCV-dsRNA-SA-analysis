@@ -1,0 +1,14 @@
+Static checks performed when assembling this repository (NO analyses rerun):
+
+rnaseq/bunya/01_merge_lanes.sbatch: bash -n OK
+rnaseq/bunya/02_cutadapt_fastp_fastqc.sbatch: bash -n OK
+rnaseq/bunya/03_build_hisat2_index.sbatch: bash -n OK
+rnaseq/bunya/04_hisat2_alignment.sbatch: bash -n OK
+pvx_gfp/ilastik.ipynb: Python AST checked for 4 code cells, OK
+rnaseq/jupyter/GO_profiling.ipynb: Python AST checked for 7 code cells, OK
+rnaseq/jupyter/SA_RNAi_defence_heatmap.ipynb: Python AST checked for 9 code cells, OK
+rnaseq/jupyter/upset_overview.ipynb: Python AST checked for 3 code cells, OK
+statistics/statistics_disease_scale.ipynb: Python AST checked for 2 code cells, OK
+viral_genome/TY_Nucleotide_composition.ipynb: Python AST checked for 6 code cells, OK
+
+R syntax not runtime-tested because Rscript is not installed in packaging environment. Source-derived scripts may still need author correction.
