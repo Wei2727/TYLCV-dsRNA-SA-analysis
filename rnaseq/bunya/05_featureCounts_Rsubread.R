@@ -1,11 +1,12 @@
 # Tomato RNA-seq: exon-level gene counts with Rsubread featureCounts
-# Transcribed from user-provided R code (2026-10-21).
+# Publication copy reconstructed from a saved R-script transcription.
 # Quotation mark and pasted Markdown escaping have been normalised.
-# The original Bunya .R file, successful execution, and package version
-# have NOT been independently verified. Compare with the saved original.
+# Original executed script, execution status, and package version
+# were not independently verified. Compare with the historical source if retained.
 
-setwd("/scratch/user/uqwtsai/mRNAseq/tomato_SL4.1")
-getwd()
+project_dir <- Sys.getenv("PROJECT_DIR", unset = "")
+if (!nzchar(project_dir)) stop("Set PROJECT_DIR to the analysis directory before running this script")
+setwd(project_dir)
 list.files()
 
 # ---- install if missing ----
@@ -31,7 +32,7 @@ library(data.table)
 library(ggplot2)
 library(pheatmap)
 
-# featureCounts; user-reported Rsubread version: 2.22.1 (verify)
+# featureCounts; manuscript reports Rsubread v2.22.1 (historical version to verify)
 bam_dir <- "hisat2_align"
 gtf <- "ITAG4.1_annotation_gffread.gtf"
 

@@ -5,13 +5,11 @@
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=64G
 #SBATCH --time=24:00:00
-#SBATCH --qos=normal
 #SBATCH --array=0-17%2
-#SBATCH --output=/scratch/user/uqwtsai/mRNAseq/tomato_SL4.1/hisat2_align/logs/%x_%A_%a.out
-#SBATCH --error=/scratch/user/uqwtsai/mRNAseq/tomato_SL4.1/hisat2_align/logs/%x_%A_%a.err
+#SBATCH --output=%x_%A_%a.out
+#SBATCH --error=%x_%A_%a.err
 
 set -euo pipefail
-set -x
 trap 'echo "FAILED at line $LINENO"; exit 1' ERR
 
 module purge
@@ -20,8 +18,11 @@ module load samtools
 # python not required for this job; keep it removed to avoid toolchain noise
 # module load python/3.10.4-gcccore-11.3.0
 
-WORKDIR=/scratch/user/uqwtsai/mRNAseq/tomato_SL4.1
-READDIR=/scratch/user/uqwtsai/mRNAseq/cutadapt_fastp/fastp_reads
+# PROJECT_ROOT is the parent directory containing genome work and filtered reads.
+# Set it privately at submission rather than hard-coding a personal filesystem path.
+PROJECT_ROOT="${PROJECT_ROOT:?Set PROJECT_ROOT to the input/output project directory}"
+WORKDIR="${WORKDIR:-${PROJECT_ROOT}/tomato_SL4.1}"
+READDIR="${READDIR:-${PROJECT_ROOT}/cutadapt_fastp/fastp_reads}"
 IDX=${WORKDIR}/tomato_SL4_ITAG4.1
 OUTDIR=${WORKDIR}/hisat2_align
 LOGDIR=${OUTDIR}/logs
@@ -29,7 +30,7 @@ LOGDIR=${OUTDIR}/logs
 mkdir -p "${OUTDIR}" "${LOGDIR}"
 
 # sanity check: index exists
-ls -lh "${IDX}".*.ht2
+compgen -G "${IDX}.*.ht2" > /dev/null || { echo "ERROR: HISAT2 index files not found"; exit 1; }
 
 # build list of R1 files (sorted so task IDs map consistently)
 mapfile -t R1_LIST < <(ls -1 "${READDIR}"/*_fastp_R1.fastq.gz | sort)
@@ -48,8 +49,8 @@ SAMPLE=$(basename "${R1}" _fastp_R1.fastq.gz)
 R2="${READDIR}/${SAMPLE}_fastp_R2.fastq.gz"
 
 echo "Task ${SLURM_ARRAY_TASK_ID} processing sample: ${SAMPLE}"
-echo "R1=${R1}"
-echo "R2=${R2}"
+echo "R1 file: $(basename "${R1}")"
+echo "R2 file: $(basename "${R2}")"
 
 # check mate exists
 if [[ ! -f "${R2}" ]]; then

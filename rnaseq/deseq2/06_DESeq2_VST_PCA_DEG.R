@@ -1,5 +1,5 @@
-# Transcribed from supplied manuscript chat paste; original source file not verified.
-# Markdown backslashes, nonbreaking spaces, and typographic quotes were normalized.
+# Reconstructed from a saved source transcription; executed source file not verified.
+# Formatting-only normalisations were made during manuscript-code preparation.
 # ============================================================
 # Tomato RNA-seq DESeq2 clean pipeline
 # featureCounts table -> DESeq2 -> VST counts -> PCA + clustering
@@ -7,8 +7,9 @@
 # Clustering tested from k = 2 to k = 6
 # No ellipses
 # ============================================================
-setwd("/scratch/user/uqwtsai/mRNAseq/tomato_SL4.1")
-getwd()
+project_dir <- Sys.getenv("PROJECT_DIR", unset = "")
+if (!nzchar(project_dir)) stop("Set PROJECT_DIR to the analysis directory before running this script")
+setwd(project_dir)
 # ============================================================
 # 1. Load packages
 # ============================================================

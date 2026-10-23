@@ -3,14 +3,16 @@
 #SBATCH --time=06:00:00
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=12G
-#SBATCH --output=logs/%x_%A_%a.out
-#SBATCH --error=logs/%x_%A_%a.err
-
+#SBATCH --output=%x_%A_%a.out
+#SBATCH --error=%x_%A_%a.err
+#SBATCH --array=1-18%3
 
 set -euo pipefail
 
-IN_DIR=/scratch/user/uqwtsai/mRNAseq/mRNAseq_cat
-OUT_ROOT=/scratch/user/uqwtsai/mRNAseq/cutadapt_fastp
+# IN_DIR: concatenated FASTQ directory. OUT_ROOT: destination for processed reads.
+# Supply both as environment variables at submission, not in the repository.
+IN_DIR="${IN_DIR:?Set IN_DIR to the directory containing merged paired FASTQ files}"
+OUT_ROOT="${OUT_ROOT:?Set OUT_ROOT to the desired output directory}"
 FASTP_READS=${OUT_ROOT}/fastp_reads
 FASTP_REPORTS=${OUT_ROOT}/fastp_reports
 FASTQC_DIR=${OUT_ROOT}/fastqc

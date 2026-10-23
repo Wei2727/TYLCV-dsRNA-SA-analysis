@@ -5,13 +5,12 @@
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=48G
 #SBATCH --time=06:00:00
-#SBATCH --qos=normal
-#SBATCH --output=logs/%x_%j.out
-#SBATCH --error=logs/%x_%j.err
+#SBATCH --output=%x_%A_%a.out
+#SBATCH --error=%x_%A_%a.err
 
 set -euo pipefail
 
-WORKDIR="$(pwd)"
+WORKDIR="${WORKDIR:-$PWD}"
 mkdir -p logs
 cd "$WORKDIR"
 
@@ -19,8 +18,6 @@ FA="S_lycopersicum_chromosomes.4.00.fa"
 GTF="ITAG4.1_annotation_gffread.gtf"
 INDEX_PREFIX="tomato_SL4_ITAG4.1"
 
-echo "Host: $(hostname)"
-echo "Working dir: $WORKDIR"
 echo "FA:  $FA"
 echo "GTF: $GTF"
 echo "Index prefix: $INDEX_PREFIX"

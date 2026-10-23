@@ -3,13 +3,14 @@
 #SBATCH --time=01:00:00
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=4G
-#SBATCH --output=merge_lanes_%j.out
-#SBATCH --error=merge_lanes_%j.err
+#SBATCH --output=%x_%A_%a.out
+#SBATCH --error=%x_%A_%a.err
 
 set -euo pipefail
 
-# Go to your input directory (edit if different)
-WORKDIR=/scratch/user/uqwtsai/mRNAseq
+# Directory containing original paired FASTQ files for lanes L005 and L006.
+# Provide WORKDIR at submission; do not commit local working directories.
+WORKDIR="${WORKDIR:?Set WORKDIR to the folder containing the original FASTQ files}"
 cd "$WORKDIR"
 
 mkdir -p mRNAseq_cat

@@ -1,10 +1,11 @@
-# Source provenance and changes in publication copy
+# Provenance and scope of publication copy
 
-Source materials: Oct 21, 2026 author-provided pasted Bunya shell/R scripts, 5 uploaded notebooks, and the additional `upset_overview.ipynb` within `python_sorted_result_fromDeseq2.zip`.
+This code collection was compiled from saved copies or transcriptions of the analytical scripts and notebook sources associated with the manuscript. The source files were supplied for repository preparation, and several shell/R files were reconstructed from text rather than directly copied from verified executed originals.
 
-- The four Bunya `.sbatch` and two `.R` files were copied from the October 2026 collected source transcriptions; they are **not identical bytes** to original saved laptop/Bunya scripts. Check the original laptop files if available.
-- The code in the six notebooks was not modified; old cell outputs and execution counts were cleared for publishing. Notebook metadata is retained. Execution success was not verified.
-- The literal invalid escaped R formula `design = \~ Condition` was corrected to `design = ~ Condition`. This changes only pasted formatting, not intended analysis.
-- Folder names and a few notebook file names were changed for GitHub readability.
-- A draft README, Methods-code mapping, input specification, author review checklist and Zenodo instructions were added; these files are new documentation, not historic research outputs.
-- Any reported software versions and analysis thresholds reflect the scripts/manuscript supplied by the author. No Slurm, Python, DESeq2, mapping, annotation or image workflow was rerun in compiling this candidate.
+- Scientific commands and reported analytical settings were preserved where available. The R formula `design = ~ Condition` was normalised from source-text formatting during original compilation.
+- The **privacy review** replaced private directory paths with explicitly configured variables, removed institutional Slurm project/account and queue directives, made scheduler log paths relative, and removed directory-inspection debugging statements from notebooks and scripts. The generic HPC folder name replaced a site-specific directory name.
+- Notebook outputs, execution counts, run-history metadata and environment-specific kernel names were cleared. Figures and analyses were not regenerated as part of the privacy review.
+- The repository ZIP deliberately **excludes all .git history**, operating-system metadata and hidden system files. Git history in any previously published remote repository is a separate issue; see `PRIVACY_CHECK.md`.
+- The original command transcripts, input data, historical execution logs and tool versions were not independently verified. Check the final repository against the manuscript before public release.
+
+This document is not evidence that the published scripts were rerun or executed successfully.
