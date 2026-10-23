@@ -5,9 +5,7 @@
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=64G
 #SBATCH --time=24:00:00
-#SBATCH --partition=general
 #SBATCH --qos=normal
-#SBATCH --account=a_qaafi_chs
 #SBATCH --array=0-17%2
 #SBATCH --output=/scratch/user/uqwtsai/mRNAseq/tomato_SL4.1/hisat2_align/logs/%x_%A_%a.out
 #SBATCH --error=/scratch/user/uqwtsai/mRNAseq/tomato_SL4.1/hisat2_align/logs/%x_%A_%a.err

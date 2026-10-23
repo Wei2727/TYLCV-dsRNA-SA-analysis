@@ -5,9 +5,7 @@
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=48G
 #SBATCH --time=06:00:00
-#SBATCH --partition=general
 #SBATCH --qos=normal
-#SBATCH --account=a_qaafi_chs
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
 

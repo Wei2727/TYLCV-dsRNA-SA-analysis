@@ -1,13 +1,11 @@
 #!/bin/bash
 #SBATCH --job-name=ca_fp_fqc
-#SBATCH --partition=general
 #SBATCH --time=06:00:00
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=12G
-#SBATCH --account=a_qaafi_chs
 #SBATCH --output=logs/%x_%A_%a.out
 #SBATCH --error=logs/%x_%A_%a.err
-#SBATCH --array=1-18%3
+
 
 set -euo pipefail
 

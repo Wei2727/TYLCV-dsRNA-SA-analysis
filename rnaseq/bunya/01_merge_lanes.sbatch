@@ -1,11 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=merge_lanes
-#SBATCH --partition=general
-#SBATCH --qos=debug
 #SBATCH --time=01:00:00
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=4G
-#SBATCH --account=a_qaafi_chs
 #SBATCH --output=merge_lanes_%j.out
 #SBATCH --error=merge_lanes_%j.err
 
