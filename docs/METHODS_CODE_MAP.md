@@ -15,4 +15,3 @@
 | DEG UpSet | `rnaseq/jupyter/upset_overview.ipynb` | Optional, verify manuscript actually contains this analysis; remove if unrelated. |
 | PVX-GFP imaging quantification | ilastik v1.4.0 then `pvx_gfp/ilastik.ipynb` | HDF5 labels expected: 1=background, 2=leaf, 3=GFP; %GFP = GFP/(leaf+GFP)*100. No `.ilp` project included. |
 | Disease-severity comparisons | `statistics/statistics_disease_scale.ipynb` | SciPy two-sided Mann–Whitney permutation with 10,000 resamples, seed 42; only 3 mock + 3 V1/C3dsR observations per timepoint in code. |
-| qPCR/RT-qPCR; Prism | Not deposited | Author opted not to include these instrument/commercial-software analyses. |
