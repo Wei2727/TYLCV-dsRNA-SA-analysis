@@ -1,16 +1,9 @@
-# Required analysis inputs (not included)
+# Inputs and reproducibility status
 
-This repository contains analysis code and documentation only. The listed external data files are required for at least some calculations or figures. For privacy and data-management reasons, these inputs must be obtained and staged **outside this repository**, unless explicit sharing approval and curation are completed.
+Included: five full treatment-versus-Mock annotated CSVs, three additional contrast CSVs, nine g:Profiler exports and a sample metadata reconstruction from NCBI submission tables. The original supplied featureCounts matrix and assignment summary are included at `counts/tomato_ITAG4.1_featureCounts_Rsubread.tsv` and `counts/featureCounts_assignment_summary.csv`. `counts/sample_info.csv` is a copy of the NCBI-derived metadata in `data/metadata/sample_info.csv`; all 18 sample IDs match the count columns, and the R script reorders metadata to match the matrix. The original count filter reproduces the gene-ID set in all eight annotated tables. See `VALIDATION.md`. The annotated result CSVs are model outputs, whereas the featureCounts matrix contains unnormalised counts. The original annotation-join code and supplementary contrast generation code were not supplied. The five primary annotated tables and nine GO exports support the downstream notebooks; the original enrichment query settings and any missing/no-result outputs should still be verified.
 
-1. `rnaseq/jupyter/GO_profiling.ipynb`: nine exported g:Profiler intersection CSV files within `GOprofiler/`, plus the gene-list and enrichment settings used in the web analysis.
-2. `rnaseq/jupyter/SA_RNAi_defence_heatmap.ipynb` and `rnaseq/jupyter/upset_overview.ipynb`: five annotated differential-expression tables within `python_sorted_result_fromDeseq2/` (SA, NSC, NSC+SA, virus-specific dsRNA and virus-specific dsRNA+SA against Mock). The separately performed gene annotation/join step is not supplied.
-3. `viral_genome/TY_Nucleotide_composition.ipynb`: `bamCoverage_BWA215.bedgraph`, `ivar_variant_BWA215.tabular`, `BWA215.pileup` and `NC_004005.gff3` as appropriate to the plotted branch. Mapping/consensus scripts and source inputs are not included.
-4. `pvx_gfp/ilastik.ipynb`: ilastik-exported `.h5` segmentations with an `exported_data` dataset and classification IDs 1 background, 2 leaf and 3 GFP (verify against the original ilastik project).
-5. `statistics/statistics_disease_scale.ipynb`: the scores are encoded in the notebook. Verify experimental and biological-replicate scope before interpreting or reusing the results.
-6. HPC/R scripts: 18 samples of paired FASTQs, SL4.0 genome FASTA, ITAG4.1 GTF, processed BAMs, featureCounts table and `counts/sample_info.csv` with `Sample` and `Condition` columns.
-
-## Working directory convention
-
-**No real filesystem paths are stored in the repository.** For HPC Slurm jobs, set the required environment variables in a private local shell (`WORKDIR`, `IN_DIR`, `OUT_ROOT`, or `PROJECT_ROOT`; see `HPC_CONFIGURATION.md`). For the R scripts, set `PROJECT_DIR`. The notebook paths are relative to the Jupyter working directory. Do not commit a personal directory layout or private exported results.
-
-This repository does not independently guarantee end-to-end computational reproducibility.
+- Raw FASTQs: BioProject PRJNA1550481, subject to release status. SL4.0 genome and ITAG4.1 annotation and mapping intermediates must be obtained separately.
+- Viral genome plotting: `bamCoverage_BWA215.bedgraph`, `ivar_variant_BWA215.tabular`, `BWA215.pileup`, `NC_004005.gff3` according to the chosen notebook branch; exact mapping commands not bundled.
+- PVX: original ilastik HDF5 export and verified label IDs / project; final GFP percentages are not bundled.
+- Disease severity: scores embedded in notebook; confirm actual replication scope. Prism qPCR/source data not bundled.
+- Run downstream RNA-seq notebooks from repository root. Set `PROJECT_DIR`, `WORKDIR`, `IN_DIR` and `OUT_ROOT` privately for HPC/R scripts.

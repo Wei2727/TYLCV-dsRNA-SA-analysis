@@ -1,0 +1,2 @@
+"source","term_name","term_id","highlighted","adjusted_p_value","negative_log10_of_adjusted_p_value","term_size","query_size","intersection_size","effective_domain_size","intersections"
+"GO:MF","serine-type endopeptidase inhibitor activity","GO:0004867","true","0.03744363942351219","1.4266219455981424","39","13","2","17686","SOLYC09G084450.3,SOLYC11G021060.2"

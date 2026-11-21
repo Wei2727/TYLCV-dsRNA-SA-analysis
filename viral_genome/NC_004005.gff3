@@ -1,0 +1,19 @@
+##gff-version 3
+#!gff-spec-version 1.21
+#!processor NCBI annotwriter
+##sequence-region NC_004005.1 1 2781
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=10832
+NC_004005.1	RefSeq	region	1	2781	.	+	.	ID=NC_004005.1:1..2781;Dbxref=taxon:10832;Is_circular=true;country=Spain:Almeria;gb-acronym=TYLCV;gbkey=Src;genome=genomic;isolate=Almeria;mol_type=genomic DNA;nat-host=Capsicum anuum
+NC_004005.1	RefSeq	gene	155	505	.	+	.	ID=gene-TYLCVgp1;Dbxref=GeneID:949136;Name=v2;gbkey=Gene;gene=v2;gene_biotype=protein_coding;locus_tag=TYLCVgp1
+NC_004005.1	RefSeq	CDS	155	505	.	+	0	ID=cds-NP_658991.1;Parent=gene-TYLCVgp1;Dbxref=GenBank:NP_658991.1,GeneID:949136;Name=NP_658991.1;gbkey=CDS;gene=v2;locus_tag=TYLCVgp1;product=precoat protein;protein_id=NP_658991.1
+NC_004005.1	RefSeq	gene	315	1091	.	+	.	ID=gene-TYLCVgp2;Dbxref=GeneID:949139;Name=cp;gbkey=Gene;gene=cp;gene_biotype=protein_coding;locus_tag=TYLCVgp2
+NC_004005.1	RefSeq	CDS	315	1091	.	+	0	ID=cds-NP_658992.1;Parent=gene-TYLCVgp2;Dbxref=UniProtKB/TrEMBL:Q8JJU0,GenBank:NP_658992.1,GeneID:949139;Name=NP_658992.1;gbkey=CDS;gene=cp;locus_tag=TYLCVgp2;product=coat protein;protein_id=NP_658992.1
+NC_004005.1	RefSeq	gene	1088	1492	.	-	.	ID=gene-TYLCVgp3;Dbxref=GeneID:949138;Name=c3;gbkey=Gene;gene=c3;gene_biotype=protein_coding;locus_tag=TYLCVgp3
+NC_004005.1	RefSeq	CDS	1088	1492	.	-	0	ID=cds-NP_658993.1;Parent=gene-TYLCVgp3;Dbxref=UniProtKB/TrEMBL:Q8JJT9,GenBank:NP_658993.1,GeneID:949138;Name=NP_658993.1;gbkey=CDS;gene=c3;locus_tag=TYLCVgp3;product=C3 protein;protein_id=NP_658993.1
+NC_004005.1	RefSeq	gene	1233	1640	.	-	.	ID=gene-TYLCVgp4;Dbxref=GeneID:949137;Name=c2;gbkey=Gene;gene=c2;gene_biotype=protein_coding;locus_tag=TYLCVgp4
+NC_004005.1	RefSeq	CDS	1233	1640	.	-	0	ID=cds-NP_658994.1;Parent=gene-TYLCVgp4;Dbxref=UniProtKB/TrEMBL:Q8JJT8,GenBank:NP_658994.1,GeneID:949137;Name=NP_658994.1;gbkey=CDS;gene=c2;locus_tag=TYLCVgp4;product=C2 protein;protein_id=NP_658994.1
+NC_004005.1	RefSeq	gene	1549	2622	.	-	.	ID=gene-TYLCVgp5;Dbxref=GeneID:949141;Name=rep;gbkey=Gene;gene=rep;gene_biotype=protein_coding;locus_tag=TYLCVgp5
+NC_004005.1	RefSeq	CDS	1549	2622	.	-	0	ID=cds-NP_658995.1;Parent=gene-TYLCVgp5;Dbxref=UniProtKB/TrEMBL:Q8JJT7,GenBank:NP_658995.1,GeneID:949141;Name=NP_658995.1;gbkey=CDS;gene=rep;locus_tag=TYLCVgp5;product=replication-associated protein;protein_id=NP_658995.1
+NC_004005.1	RefSeq	gene	2178	2471	.	-	.	ID=gene-TYLCVgp6;Dbxref=GeneID:949140;Name=c4;gbkey=Gene;gene=c4;gene_biotype=protein_coding;locus_tag=TYLCVgp6
+NC_004005.1	RefSeq	CDS	2178	2471	.	-	0	ID=cds-NP_658996.1;Parent=gene-TYLCVgp6;Dbxref=GOA:Q8JJT7,HSSP:1L5I,InterPro:IPR001301,UniProtKB/TrEMBL:Q8JJT6,GenBank:NP_658996.1,GeneID:949140;Name=NP_658996.1;gbkey=CDS;gene=c4;locus_tag=TYLCVgp6;product=C4 protein;protein_id=NP_658996.1
+

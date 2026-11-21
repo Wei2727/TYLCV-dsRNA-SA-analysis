@@ -1,0 +1,4 @@
+"source","term_name","term_id","highlighted","adjusted_p_value","negative_log10_of_adjusted_p_value","term_size","query_size","intersection_size","effective_domain_size","intersections"
+"GO:MF","oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen","GO:0016705","true","0.04399851445647481","1.3565619865648801","430","15","4","17686","SOLYC10G078220.2,SOLYC06G035530.3,SOLYC06G074420.1,SOLYC01G109140.3"
+"GO:BP","phenylpropanoid metabolic process","GO:0009698","true","0.008194416656057607","2.0864819575385716","76","11","3","13614","SOLYC03G120320.1,SOLYC10G078220.2,SOLYC06G035530.3"
+"GO:BP","secondary metabolic process","GO:0019748","false","0.014067157403968838","1.85179365299129","91","11","3","13614","SOLYC03G120320.1,SOLYC10G078220.2,SOLYC06G035530.3"

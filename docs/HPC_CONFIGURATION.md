@@ -19,14 +19,14 @@ On a Slurm cluster, use `sbatch` with your site's required account, partition an
 # Submit from your private input working directory on a login node.
 # Only run the computational tasks on allocated Slurm compute nodes.
 export WORKDIR="<PRIVATE_FASTQ_DIRECTORY>"
-sbatch --account="<YOUR_PROJECT_ACCOUNT>" --partition="<YOUR_PARTITION>"   --export=ALL rnaseq/hpc/01_merge_lanes.sbatch
+sbatch --account="<YOUR_PROJECT_ACCOUNT>" --partition="<YOUR_PARTITION>"   --export=ALL rnaseq/bunya/01_merge_lanes.sbatch
 ```
 
 For RStudio, set `PROJECT_DIR` privately in the R session or shell before sourcing the script:
 
 ```r
 Sys.setenv(PROJECT_DIR = "<PRIVATE_ANALYSIS_DIRECTORY>")
-source("rnaseq/hpc/05_featureCounts_Rsubread.R")
+source("rnaseq/bunya/05_featureCounts_Rsubread.R")
 ```
 
-**Important:** The example above is not an executed/tested command. Site-dependent options, accessible paths, module versions, pre-existing directories, limits, and sample-list preparation must be checked. Batching the 18 samples has an existing sample-list race risk that is documented in `REVIEW_BEFORE_RELEASE.md`. Do not run computationally heavy commands on an HPC login node.
+**Important:** The example above is not an executed/tested command. Site-dependent options, accessible paths, module versions, pre-existing directories, limits, and sample-list preparation must be checked. The array sample-list construction was revised to avoid dependence on task 1; this is a prospective robustness fix and was not run on Bunya. Keep the input directory unchanged during the array run. Do not run computationally heavy commands on an HPC login node.

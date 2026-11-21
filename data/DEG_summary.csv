@@ -1,0 +1,9 @@
+Contrast,Filename,Scope,Gene records,Nonmissing padj,Upregulated,Downregulated,Total DEGs,Significant exact abs(log2FC)=1
+SA vs Mock,SA_vs_Mock_DE_annotated.csv,Primary (vs Mock),20353,20352,700,326,1026,0
+NSCdsR vs Mock,NSC_vs_Mock_DE_annotated.csv,Primary (vs Mock),20353,20352,14,35,49,0
+V1/C3dsR vs Mock,Spec_vs_Mock_DE_annotated.csv,Primary (vs Mock),20353,20352,52,105,157,0
+NSCdsR + SA vs Mock,NSCSA_vs_Mock_DE_annotated.csv,Primary (vs Mock),20353,20352,1353,1286,2639,0
+V1/C3dsR + SA vs Mock,SpecSA_vs_Mock_DE_annotated.csv,Primary (vs Mock),20353,20352,903,667,1570,0
+V1/C3dsR + SA vs SA,V1SA_vs_SA_DE_annotated.csv,Additional (include if reported),20353,20352,44,127,171,0
+NSCdsR + SA vs SA,NSCSA_vs_SA_DE_annotated.csv,Additional (include if reported),20353,19562,330,275,605,0
+V1/C3dsR + SA vs NSCdsR + SA,V1SA_vs_NSCSA_DE_annotated.csv,Additional (include if reported),20353,19957,39,62,101,0
